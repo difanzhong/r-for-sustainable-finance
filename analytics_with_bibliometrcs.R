@@ -51,10 +51,10 @@ threeFieldsPlot(data, fields = c("DE", "PY", "SC"), n=c(16,20,12))
 # 5.2. keywords co-occurrences 
 Netmatrix2 = biblioNetwork(data, analysis = "co-occurrences", network = "author_keywords", sep = ";")
 networkPlot(Netmatrix2, normalize = "association", weighted = T, n = 50, Title = "Keyword Co-occurrences",
-                  type = "auto",size=22,  size.cex=T,label.cex = T, edgesize = 20, labelsize = 8)
+                  type = "auto",size=23,  size.cex=T,label.cex = T, edgesize = 20, labelsize = 9)
 
 # 5.3. thematic map
-data$PY <- as.numeric(data$PY)
+data$PY <- as.numeric(data$PY) # alter year to numeric type for comparison
 Map = thematicMap(data, field = "DE", n = 1000, minfreq = 5, stemming = F, size = 0.1,
                   n.labels = 5, repel = TRUE)
 plot(Map$map)
